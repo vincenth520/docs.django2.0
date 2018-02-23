@@ -92,7 +92,7 @@ Quit the server with CONTROL-C.
 
 现在需要注意的是：不要在任何生产环境使用这个服务器。 它仅用于开发时使用。 （我们的重点是编写Web框架，非Web服务器。）
 
-既然服务器已经运行，请用你的浏览器访问 http://127.0.0.1:8000/。 在淡蓝色背景下，你将看到一个“Welcome to Django”的页面。 它成功运行了！
+既然服务器已经运行，请用你的浏览器访问 http://127.0.0.1:8000/  在淡蓝色背景下，你将看到一个“Welcome to Django”的页面。 它成功运行了！
 
 > ### 改变端口
 > 默认情况下，runserver命令在内部IP的8000端口启动开发服务器。
@@ -195,14 +195,14 @@ include()背后的想法是为了方便即插即用的URL。由于polls是在他
 $ python manage.py runserver
 ```
 
-浏览器访问http://localhost:8000/polls/,你将看到一行文字 “Hello, world. You’re at the polls index.”, 这是你的index视图里面定义的内容
+浏览器访问http://localhost:8000/polls/ 你将看到一行文字 “Hello, world. You’re at the polls index.”, 这是你的index视图里面定义的内容
 
 path()函数传递四个参数，其中两个是必需的： route和view，以及两个可选的：kwargs，和name。在这一点上，值得回顾一下这些参数是什么。
 
 ### path()参数：route 
 route是一个包含URL模式的字符串。在处理请求时，Django从第一个模式开始urlpatterns并在列表中向下，将所请求的URL与每个模式进行比较，直到找到匹配的模式。
 
-模式不搜索GET和POST参数或域名。例如，在请求中https://www.example.com/myapp/，URLconf将查找 myapp/。在请求中https://www.example.com/myapp/?page=3，URLconf也会查找myapp/。
+模式不搜索GET和POST参数或域名。例如，在请求中https://www.example.com/myapp/ URLconf将查找 myapp/。在请求中https://www.example.com/myapp/?page=3 URLconf也会查找myapp/。
 
 
 ### path() 参数: view
