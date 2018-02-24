@@ -172,6 +172,16 @@ polls/
 在polls/urls.py文件中包含以下代码：
 > polls/urls.py
 ```
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+下一步是需要将根URLconf指向polls.urls模块。 在mysite/urls.py中, 加入一个django.urls.include的import， 然后插入一个 include()函数 在 urlpatterns 列表中, 如下:
+```
 from django.urls import include, path
 from django.contrib import admin
 
