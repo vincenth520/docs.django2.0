@@ -8,7 +8,7 @@
 
 默认情况下，配置使用SQLite。 如果你是数据库新手，或者你只是想尝试Django，这是最简单的选择。 SQLite包含在Python中，所以你不需要安装任何东西来支持你的数据库。 但是，当开始你的第一个真正的项目时，你可能想要使用像PostgreSQL这样更具可伸缩性的数据库，以避免数据库切换的麻烦。
 
-如果您希望使用其他数据库，请安装相应的[database bindings](https://docs.djangoproject.com/en/2.0/topics/install/#database-installation)，并在**[DATABASES](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-DATABASES)** '**default**'项中更改以下键以与数据库匹配连接设置：
+如果您希望使用其他数据库，请安装相应的[database bindings](https://docs.djangoproject.com/en/2.0/topics/install/#database-installation)，并在[**DATABASES**](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-DATABASES) '**default**'项中更改以下键以与数据库匹配连接设置：
 
 
 - **Either** - '**django.db.backends.sqlite3**', '**django.db.backends.postgresql**', '**django.db.backends.mysql**', 或者 '**django.db.backends.oracle**'中的一种. [其他后端也可用](https://docs.djangoproject.com/en/2.0/ref/databases/#third-party-notes)。
