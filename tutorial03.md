@@ -21,17 +21,17 @@
 - 投票行动 - 处理针对特定问题的特定选择的投票。
 在Django中，网页和其他内容由视图传递。 每个视图都由一个简单的Python函数（或基于类的视图的方法）表示。 Django将通过检查请求的URL（准确地说，域名后的URL部分）来选择一个视图。
 
-现在在网络上你可能遇到过"**ME2/Sites/dirmod.asp?sid=&type=gen&mod=Core+Pages&gid=A6CD4967199A42D9B65B1B**"等。 令人庆幸的是Django允许我们使用比这更优雅的URL模式。
+现在在网络上你可能遇到过"`ME2/Sites/dirmod.asp?sid=&type=gen&mod=Core+Pages&gid=A6CD4967199A42D9B65B1B`"等。 令人庆幸的是Django允许我们使用比这更优雅的URL模式。
 
-URL模式是URL的一般形式，例如：**/newsarchive/<year>/<month>/**。
+URL模式是URL的一般形式，例如：`/newsarchive/<year>/<month>/`。
 
-为了从一个URL获得一个视图，Django使用了所谓的“URLconf”。 URLconf将URL模式映射到视图。
+为了从一个URL获得一个视图，Django使用了所谓的“**URLconf**”。 **URLconf**将URL模式映射到视图。
 
-本教程提供了使用URLconf的基本说明，您可以参考[URL dispatcher](https://docs.djangoproject.com/en/2.0/topics/http/urls/)了解更多信息。
+本教程提供了使用**URLconf**的基本说明，您可以参考[URL dispatcher](https://docs.djangoproject.com/en/2.0/topics/http/urls/)了解更多信息。
 
 ## 设置更多的视图
 
-现在我们再添加一些视图到polls/views.py。 这些视图略微不同，因为各自名称不同：
+现在我们再添加一些视图到**polls/views.py**。 这些视图略微不同，因为各自名称不同：
 > polls/views.py
 ```python
 def detail(request, question_id):
@@ -45,7 +45,7 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 ```
 
-通过添加以下**path()**调用，将这些新视图连接到**polls.urls**模块：
+通过添加以下`path()`调用，将这些新视图连接到**polls.urls**模块：
 > polls/urls.py
 ```python
 from django.urls import path
