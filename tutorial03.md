@@ -12,6 +12,7 @@
 - 基于月份的存档页面 - 显示给定月份中所有条目的日期。
 - 基于日期的归档页面 - 显示给定日期的所有条目。
 - 评论操作 - 处理对给定条目的发布评论。
+
 在我们的投票应用程序中，我们将有以下四个视图：
 
 - 问题“索引”页面 - 显示最新的几个问题。
@@ -20,9 +21,9 @@
 - 投票行动 - 处理针对特定问题的特定选择的投票。
 在Django中，网页和其他内容由视图传递。 每个视图都由一个简单的Python函数（或基于类的视图的方法）表示。 Django将通过检查请求的URL（准确地说，域名后的URL部分）来选择一个视图。
 
-现在在网络上你可能遇到过"ME2/Sites/dirmod.asp?sid=&type=gen&mod=Core+Pages&gid=A6CD4967199A42D9B65B1B"等。 令人庆幸的是Django允许我们使用比这更优雅的URL模式。
+现在在网络上你可能遇到过"**ME2/Sites/dirmod.asp?sid=&type=gen&mod=Core+Pages&gid=A6CD4967199A42D9B65B1B**"等。 令人庆幸的是Django允许我们使用比这更优雅的URL模式。
 
-URL模式是URL的一般形式，例如：/newsarchive/<year>/<month>/。
+URL模式是URL的一般形式，例如：**/newsarchive/<year>/<month>/**。
 
 为了从一个URL获得一个视图，Django使用了所谓的“URLconf”。 URLconf将URL模式映射到视图。
 
