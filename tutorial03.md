@@ -214,7 +214,7 @@ def detail(request, question_id):
 还有一个[`get_list_or_404()`](https://docs.djangoproject.com/en/2.0/topics/http/shortcuts/#django.shortcuts.get_list_or_404)功能，其功能就像[`get_object_or_404()`](https://docs.djangoproject.com/en/2.0/topics/http/shortcuts/#django.shortcuts.get_object_or_404)- 除了使用 [`filter()`](https://docs.djangoproject.com/en/2.0/ref/models/querysets/#django.db.models.query.QuerySet.filter)而不是 [`get()`](https://docs.djangoproject.com/en/2.0/ref/models/querysets/#django.db.models.query.QuerySet.get)。[**Http404**](https://docs.djangoproject.com/en/2.0/topics/http/views/#django.http.Http404)如果列表为空，则会引发 此问题。
 
 ### 使用模板系统
-回到**detail()**我们的投票应用程序的视图。鉴于上下文变量question，以下是**polls/detail.html**模板的样子：
+回到`detail()`我们的投票应用程序的视图。鉴于上下文变量question，以下是**polls/detail.html**模板的样子：
 
 > polls/templates/polls/detail.html
 
@@ -229,7 +229,7 @@ def detail(request, question_id):
 
 模板系统使用点查找语法来访问变量属性。 在{{ question.question_text }}这个例子中，Django首先在question对象上做字典查询。 否则，它会尝试一个属性查找 如果属性查找失败，它会尝试一个列表索引查找。
 
-方法调用发生在**{% for %}**循环中：**question.choice_set.all**被解释为Python的代码**question.choice_set.all()**，它返回一个由Choice对象组成的可迭代对象，并将其用于**{% for %}**标签。
+方法调用发生在`{% for %}`循环中：**question.choice_set.all**被解释为Python的代码**question.choice_set.all()**，它返回一个由Choice对象组成的可迭代对象，并将其用于**{% for %}**标签。
 
 有关模板的更多信息，请参阅[template guide](https://docs.djangoproject.com/en/2.0/topics/templates/)。
 
@@ -250,7 +250,7 @@ def detail(request, question_id):
 path('<int:question_id>/', views.detail, name='detail'),
 ...
 ```
-如果你想修改polls应用的detail视图的URL, 类似于**polls/specifics/12/**的形式，你可以修改**polls/urls.py**中的内容:
+如果你想修改polls应用的detail视图的URL, 类似于`polls/specifics/12/`的形式，你可以修改**polls/urls.py**中的内容:
 ```
 ...
 # added the word 'specifics'
