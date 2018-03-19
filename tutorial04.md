@@ -148,7 +148,7 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
 ```
-请注意，第二和第三模式的路径字符串中的匹配模式的名称已从**<question_id>**改变为**<pk>**。
+请注意，第二和第三模式的路径字符串中的匹配模式的名称已从`<question_id>`改变为`<pk>`。
 
 ## 修改视图
 接下来，我们将删除旧的**index**，**detail**和**results**视图，并使用Django的通用视图。 为此，请打开**polls/views.py**文件，并将其更改如下：

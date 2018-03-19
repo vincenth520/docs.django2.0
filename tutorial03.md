@@ -64,9 +64,9 @@ urlpatterns = [
 ]
 ```
 当你在浏览器访问
-看看你的浏览器，在'`/polls/34/`'。 它开始运行 **detail()** 方法和你在URL中提供的ID. 尝试“/polls/34/results/”和“/polls/34/vote/” - 这些将显示占位符结果和投票页面。
+看看你的浏览器，在'`/polls/34/`'。 它开始运行 `detail()` 方法和你在URL中提供的ID. 尝试“/polls/34/results/”和“/polls/34/vote/” - 这些将显示占位符结果和投票页面。
 
-当有人从你的网站上请求一个页面 - 比如说“/polls/34/”时，Django将加载mysite.urls Python模块，因为它是由**ROOT_URLCONF**设置指向的。 它找到名为**urlpatterns**的变量并按顺序遍历这些模式。 在'**polls/**'找到匹配项后，将匹配的文本（"**polls/**"）分离并发送剩余的文本 - "**34/**" 在那里匹配'**<int:question_id>/**'，导致对**detail()**视图的调用如下所示：
+当有人从你的网站上请求一个页面 - 比如说“/polls/34/”时，Django将加载mysite.urls Python模块，因为它是由**ROOT_URLCONF**设置指向的。 它找到名为**urlpatterns**的变量并按顺序遍历这些模式。 在'**polls/**'找到匹配项后，将匹配的文本（"**polls/**"）分离并发送剩余的文本 - "**34/**" 在那里匹配'**<int:question_id>/**'，导致对`detail()`视图的调用如下所示：
 ```
 detail(request=<HttpRequest object>, question_id=34)
 ```
@@ -229,7 +229,7 @@ def detail(request, question_id):
 
 模板系统使用点查找语法来访问变量属性。 在{{ question.question_text }}这个例子中，Django首先在question对象上做字典查询。 否则，它会尝试一个属性查找 如果属性查找失败，它会尝试一个列表索引查找。
 
-方法调用发生在`{% for %}`循环中：**question.choice_set.all**被解释为Python的代码**question.choice_set.all()**，它返回一个由Choice对象组成的可迭代对象，并将其用于**{% for %}**标签。
+方法调用发生在`{% for %}`循环中：**question.choice_set.all**被解释为Python的代码**question.choice_set.all()**，它返回一个由Choice对象组成的可迭代对象，并将其用于`{% for %}`标签。
 
 有关模板的更多信息，请参阅[template guide](https://docs.djangoproject.com/en/2.0/topics/templates/)。
 
@@ -239,7 +239,7 @@ def detail(request, question_id):
 ```
 <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
 ```
-问题出在硬编码，紧耦合使得在大量的模板中修改 URLs 成为富有挑战性的项目。 然而，因为你在**polls.urls**模块的`url()`函数中定义了**name** 参数，你可以通过使用**{% url %}**模板标签来移除对你的URL配置中定义的特定的URL的依赖：
+问题出在硬编码，紧耦合使得在大量的模板中修改 URLs 成为富有挑战性的项目。 然而，因为你在**polls.urls**模块的`url()`函数中定义了**name** 参数，你可以通过使用`{% url %}`模板标签来移除对你的URL配置中定义的特定的URL的依赖：
 ```
 <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
 ```
